@@ -2,7 +2,7 @@
   <input type="hidden" [id]="name" [name]="name" [value]="value" />
 
   <div class="select__value-wrapper flex-row flex-start">
-    <div clas="select__value">{{ value }}</div>
+    <div class="select__value">{{ value }}</div>
   </div>
 
   <ul class="select__options">
@@ -10,8 +10,9 @@
       class="select__option flex-row flex-start"
       *ngFor="let option of options"
       (click)="onSelect(option)"
+      options
     >
-      {{ options.name }}
+      {{ option.name }}
     </li>
   </ul>
 </div>
