@@ -1,0 +1,34 @@
+@import "../shared/colors";
+
+:host {
+  width: 100%;
+}
+
+.input-wrapper {
+  background-color: $gray-darkest;
+  height: 6rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  span {
+    height: 3rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    color: $gray-lighter;
+  }
+
+  input {
+    height: 3rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    color: $gray-lighter;
+    background-color: $gray-darkest;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

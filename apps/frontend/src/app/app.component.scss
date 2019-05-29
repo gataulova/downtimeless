@@ -1,0 +1,54 @@
+@import "./shared/colors";
+
+.root {
+  padding: 2rem 2rem 2rem 26rem;
+}
+
+main {
+  min-height: calc(100vh - 4rem);
+}
+
+.header {
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 7rem;
+  transform: translateY(-0.5rem);
+
+  .dropdown {
+    line-height: 3rem;
+    height: 3rem;
+    color: $gray-lightest;
+    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+
+    ui-icon {
+      cursor: pointer;
+    }
+
+    span {
+      line-height: 3rem;
+      height: 3rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+      color: $gray-lightest;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.auth {
+  width: 500px;
+  height: 500px;
+}
+
+.auth-form {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  align-self: flex-start;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: $gray-lighter;
+}

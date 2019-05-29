@@ -1,0 +1,9 @@
+<button
+  class="ui-button"
+  [type]="bType"
+  [disabled]="bIsDisabled"
+  (click)="onClick($event)"
+  [ngClass]="[bColor, bClass]"
+>
+  <ng-content></ng-content>
+</button>

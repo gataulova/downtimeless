@@ -1,0 +1,67 @@
+@import "../shared/colors";
+@import "../shared/mixins";
+
+.ui-button {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  height: 3rem;
+  line-height: 3rem;
+  font-weight: 600;
+  border-radius: 1.5rem;
+  padding: 0 2.5rem;
+  color: $gray-darkest;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  min-width: 8rem;
+  transition: background 0.25s ease 0s, box-shadow 0.25s ease 0s;
+
+  @include box-shadow-lighter();
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.big {
+    height: 4rem;
+    line-height: 4rem;
+    border-radius: 2rem;
+  }
+
+  &.primary {
+    background: $red;
+
+    &:hover {
+      background: darken($red, 10%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background: darken($red, 20%);
+
+      @include box-shadow-light();
+    }
+  }
+
+  &.secondary {
+    background: $blue-dirty;
+
+    &:hover {
+      background: darken($blue-dirty, 10%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background: darken($blue-dirty, 20%);
+
+      @include box-shadow-light();
+    }
+  }
+}

@@ -1,0 +1,105 @@
+<div class="server-detail row justify-between align-top">
+  <ui-card style="flex-basis: 30%; width: 30%; height: max-content;">
+    <div class="title-wrapper row justify-between align-center">
+      <span class="title main" style="margin: 0;">{{ id }}</span>
+      <div class="row align-center justify-center">
+        <div class="button-wrapper" style="margin-right: 1rem;">
+          <ui-icon section="essential" shape="refresh-line"></ui-icon>
+        </div>
+        <div class="button-wrapper">
+          <ui-icon section="media" shape="power-line"></ui-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-between align-center">
+      <span class="title">IPv4</span>
+      <span class="value">140.191.49.156</span>
+    </div>
+
+    <div class="row justify-between align-center">
+      <span class="title">Location</span>
+      <span class="value">Europe</span>
+    </div>
+
+    <div class="row justify-between align-center">
+      <span class="title">Agent</span>
+      <span class="value"><ui-status [value]="true"></ui-status></span>
+    </div>
+
+    <div class="row justify-between align-center">
+      <span class="title">Server</span>
+      <span class="value"><ui-status [value]="true"></ui-status></span>
+    </div>
+
+    <div class="row justify-between align-center">
+      <span class="title">Uptime</span>
+      <span class="value">84 days</span>
+    </div>
+
+    <div class="row justify-between align-center">
+      <span class="title">Created</span>
+      <span class="value">77 days ago</span>
+    </div>
+  </ui-card>
+  <div
+    class="charts column justify-start align-center"
+    style="flex-basic:calc(70% - 2rem); width: calc(70% - 2rem);"
+  >
+    <div class="chart-wrapper">
+      <h2 class="chart-title">CPU Load</h2>
+
+      <canvas
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="'line'"
+      ></canvas>
+    </div>
+
+    <div class="chart-wrapper">
+      <h2 class="chart-title">Memory Load</h2>
+
+      <canvas
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="'line'"
+      ></canvas>
+    </div>
+
+    <div class="chart-wrapper">
+      <h2 class="chart-title">SWAP Load</h2>
+
+      <canvas
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="'line'"
+      ></canvas>
+    </div>
+
+    <div class="chart-wrapper">
+      <h2 class="chart-title">Disk Usage</h2>
+
+      <canvas
+        baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [options]="lineChartOptions"
+        [colors]="lineChartColors"
+        [legend]="lineChartLegend"
+        [chartType]="'line'"
+      ></canvas>
+    </div>
+  </div>
+</div>

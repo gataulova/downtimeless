@@ -1,0 +1,110 @@
+@import "../../shared/colors";
+
+:host {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: repeat(2, calc(50% - 1rem));
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "welcome welcome welcome chart chart chart"
+    "total total new new record record";
+  grid-gap: 2rem;
+}
+
+.welcome {
+  grid-area: welcome;
+}
+
+.welcome-content {
+  height: 100%;
+}
+
+.welcome-title {
+  font-size: 3rem;
+  line-height: 3rem;
+  height: 3rem;
+  color: $gray-lighter;
+  align-self: flex-start;
+}
+
+.welcome-icon {
+  min-width: 4rem;
+  height: 4rem;
+}
+
+.welcome-data {
+  width: 100%;
+}
+
+.welcome-description {
+  margin-top: 1rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: $gray-light;
+}
+
+.welcome-value {
+  font-size: 4rem;
+  line-height: 4rem;
+  color: $gray;
+  font-weight: 600;
+}
+
+.chart {
+  grid-area: chart;
+}
+
+.total {
+  grid-area: total;
+}
+
+.new {
+  grid-area: new;
+}
+
+.record {
+  grid-area: record;
+}
+
+.record-content {
+  height: 100%;
+  position: relative;
+  padding-top: 3rem;
+}
+
+.record-title {
+  font-size: 3rem;
+  line-height: 3rem;
+  color: $gray-lighter;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.record-block {
+  margin: 0 0.5rem;
+}
+
+.record-description {
+  margin-top: 1rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: $gray-light;
+}
+
+.record-value {
+  font-size: 4rem;
+  line-height: 4rem;
+  color: $gray;
+  font-weight: 600;
+}

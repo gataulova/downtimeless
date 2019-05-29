@@ -1,0 +1,106 @@
+<div class="table-wrapper">
+  <div class="table-settings row justify-between align-center">
+    <form (ngSubmit)="onSubmit()" class="row justify-between align-center">
+      <input
+        type="text"
+        placeholder="Search..."
+        class="table-input"
+        name="table-input"
+        [(ngModel)]="formInput"
+      />
+
+      <div class="row">
+        <ui-button bColor="secondary" bClass="big" style="margin-right: 1rem"
+          >CREATE INSTANCE</ui-button
+        >
+        <select
+          class="table-select"
+          [(ngModel)]="formSelect"
+          name="table-select"
+        >
+          <option [value]="10">Show 10</option>
+          <option [value]="10">Show 20</option>
+          <option [value]="10">Show 50</option>
+          <option [value]="10">Show 100</option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <td *ngFor="let column of columns" (click)="onSortChanged(column.id)">
+          {{ column.name }}
+
+          <ui-icon
+            *ngIf="getFlagForIcon(column.id, 'top')"
+            section="essential"
+            shape="arrow-top-line"
+            class="arrow"
+          ></ui-icon>
+
+          <ui-icon
+            *ngIf="getFlagForIcon(column.id, 'top-active')"
+            section="essential"
+            shape="arrow-top-line-active"
+            class="arrow"
+          ></ui-icon>
+
+          <ui-icon
+            *ngIf="getFlagForIcon(column.id, 'bottom')"
+            section="essential"
+            shape="arrow-bottom-line"
+            class="arrow"
+          ></ui-icon>
+
+          <ui-icon
+            *ngIf="getFlagForIcon(column.id, 'bottom-active')"
+            section="essential"
+            shape="arrow-bottom-line-active"
+            class="arrow"
+          ></ui-icon>
+        </td>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let key of getRowKeys(row)" (click)="onClick(row.name)">
+          <div *ngIf="isBoolean(row[key])">
+            <ui-status [value]="row[key]"></ui-status>
+          </div>
+          <ng-container *ngIf="!isBoolean(row[key])">{{
+            row[key]
+          }}</ng-container>
+        </td>
+      </tr>
+      <tr>
+        <td *ngFor="let column of columns">-</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination row justify-end align-center">
+    <span class="pagination-description"
+      >1 - {{ getMin(10, length) }} of {{ length }} rows</span
+    >
+    <hr class="pagination-separator" />
+    <div class="pages row justify-center align-center">
+      <button type="button" class="prev-page row justify-center align-center">
+        <ui-icon shape="angle-line-left"></ui-icon>
+      </button>
+      <button
+        type="button"
+        class="page row justify-center align-center"
+        [ngClass]="{ active: page === 1 }"
+        *ngFor="let page of pages"
+      >
+        {{ page }}
+      </button>
+      <button type="button" class="next-page row justify-center align-center">
+        <ui-icon shape="angle-line-right"></ui-icon>
+      </button>
+    </div>
+  </div>
+</div>

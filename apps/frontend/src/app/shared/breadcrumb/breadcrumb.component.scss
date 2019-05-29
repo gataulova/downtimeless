@@ -1,0 +1,21 @@
+@import "../colors";
+@import "../mixins";
+
+.ui-breadcrumb {
+  display: inline-block;
+  height: 3rem;
+  line-height: 2rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $gray-light;
+  border-radius: 0.5rem;
+  background-color: $blue;
+  margin-right: 1rem;
+  transition: background-color 0.25s ease 0s;
+
+  &:hover,
+  &:hover {
+    background-color: rgba($blue-dirty, 0.25);
+  }
+}

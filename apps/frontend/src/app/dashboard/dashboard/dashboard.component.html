@@ -1,0 +1,99 @@
+<div class="grid">
+  <ui-card class="welcome">
+    <div class="welcome-content column justify-between align-center">
+      <h2 class="welcome-title">Welcome back, Evgeniya!</h2>
+
+      <div class="welcome-data row justify-around align-center">
+        <div class="welcome-total column justify-center align-center">
+          <ui-icon
+            section="technology"
+            shape="blocks-group-solid"
+            class="welcome-icon"
+          ></ui-icon>
+          <span class="welcome-description">Total instances</span>
+          <span class="welcome-value">35</span>
+        </div>
+
+        <div class="welcome-total column justify-center align-center">
+          <ui-icon
+            section="essential"
+            shape="new-line"
+            class="welcome-icon"
+          ></ui-icon>
+          <span class="welcome-description">New instances</span>
+          <span class="welcome-value">15</span>
+        </div>
+
+        <div class="welcome-total column justify-center align-center">
+          <ui-icon
+            section="technology"
+            shape="shield-x-solid"
+            class="welcome-icon"
+          ></ui-icon>
+          <span class="welcome-description">Problems this week</span>
+          <span class="welcome-value">3</span>
+        </div>
+      </div>
+    </div>
+  </ui-card>
+
+  <ui-card class="chart" [cWithoutPadding]="true">
+    <div class="welcome-content column justify-between align-center">
+      <observer-average-uptime></observer-average-uptime>
+    </div>
+  </ui-card>
+
+  <ui-card class="total">
+    <div class="welcome-content column justify-between align-center">
+      <observer-server-stats></observer-server-stats>
+    </div>
+  </ui-card>
+
+  <ui-card class="new">
+    <div class="welcome-content column justify-between align-center">
+      <observer-new-problems></observer-new-problems>
+    </div>
+  </ui-card>
+
+  <ui-card class="record">
+    <div class="record-content column justify-center align-center">
+      <h2 class="record-title">Time without problems</h2>
+      <div class="record-timer row justify-around align-start">
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">{{ formatNumber(dayAmount) }}</span>
+          <span class="record-description">days</span>
+        </div>
+
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">:</span>
+          <span class="record-description"></span>
+        </div>
+
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">{{ formatNumber(hourAmount) }}</span>
+          <span class="record-description">hrs</span>
+        </div>
+
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">:</span>
+          <span class="record-description"></span>
+        </div>
+
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">{{ formatNumber(minuteAmount) }}</span>
+          <span class="record-description">min</span>
+        </div>
+
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">:</span>
+          <span class="record-description"></span>
+        </div>
+
+        <div class="record-block column justify-start align-center">
+          <span class="record-value">{{ formatNumber(secondAmount) }}</span>
+          <span class="record-description">sec</span>
+        </div>
+      </div>
+    </div>
+  </ui-card>
+</div>

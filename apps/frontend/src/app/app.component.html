@@ -1,0 +1,51 @@
+<div class="root" *ngIf="isAuthenticated">
+  <observer-sidenav></observer-sidenav>
+  <main class="column">
+    <header class="header row align-end justify-between">
+      <div class="row justify-start">
+        <observer-breadcrumb
+          *ngFor="let breadcrumb of breadcrumbs"
+          [link]="breadcrumb.link"
+          >{{ breadcrumb.name | titlecase }}</observer-breadcrumb
+        >
+      </div>
+
+      <div class="dropdown row justify-center align-center">
+        <span>ev_gataulova@outlook.com</span>
+        <ui-icon
+          shape="power-solid"
+          section="media"
+          style="height: 3rem; min-width: 3rem;"
+        ></ui-icon>
+      </div>
+    </header>
+
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<div
+  class="root column justify-center align-center"
+  *ngIf="!isAuthenticated"
+  style="padding: 2rem;"
+>
+  <ui-card
+    class="auth column justify-center align-center"
+    cClass="column justify-between align-center"
+  >
+    <h2 class="title">Please, Sign In</h2>
+
+    <div class="auth-form column justify-end align-center">
+      <ui-input name="Email"></ui-input>
+      <ui-input name="Password" type="password"></ui-input>
+
+      <ui-button
+        bColor="secondary"
+        style="width: 100%"
+        bClass="full-width"
+        (click)="isAuthenticated = true"
+        >Sign In</ui-button
+      >
+    </div>
+  </ui-card>
+</div>

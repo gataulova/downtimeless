@@ -1,0 +1,33 @@
+{
+  "npmScope": "observer",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "backend": {
+      "tags": []
+    },
+    "frontend": {
+      "tags": []
+    },
+    "frontend-e2e": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    },
+    "worker": {
+      "tags": []
+    },
+    "agent": {
+      "tags": []
+    }
+  }
+}

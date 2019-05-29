@@ -1,0 +1,85 @@
+@import "../colors";
+@import "../mixins";
+
+.ui-sidenav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  background-color: $gray-darkest;
+  width: 24rem;
+
+  @include box-shadow();
+
+  .header {
+    width: 20rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    height: 7rem;
+
+    .title {
+      color: $gray-lighter;
+      font-size: 2.5rem;
+      text-align: center;
+      z-index: 5;
+      margin: 0;
+      font-weight: 800;
+      line-height: 5rem;
+      letter-spacing: 1.5px;
+    }
+
+    .decorator {
+      width: 100%;
+      height: 2rem;
+      background-color: $blue-dirty;
+      transform: translateY(-2.5rem);
+    }
+  }
+
+  .separator {
+    margin: 2rem auto;
+    background-color: $gray-dark;
+    border-bottom-color: $gray-dark;
+    width: 90%;
+  }
+
+  .link {
+    width: 100%;
+    height: 6rem;
+    text-decoration: none;
+    padding: 1.5rem 0 1.5rem 4rem;
+    text-align: start;
+    border-left: solid 0.5rem $gray-darkest;
+    transition: background-color 0.25s ease 0s, border-left-color 0.25s ease 0s;
+
+    &.active,
+    &:active:hover {
+      border-left: solid 0.5rem $blue-dirtier !important;
+    }
+
+    .link-content {
+      color: $gray-light;
+      font-size: 1.5rem;
+      text-decoration: none;
+      height: 3rem;
+      line-height: 3rem;
+      letter-spacing: 1px;
+    }
+
+    &:hover {
+      background-color: $gray-dark;
+      border-left: solid 0.5rem $gray-dark;
+
+      @include box-shadow();
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 4rem;
+    left: 2rem;
+    width: 20rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,254 @@
+@import "../shared/colors";
+@import "../shared/mixins";
+
+.table-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.table-settings {
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+
+  form {
+    width: 100%;
+    padding-right: 1rem;
+
+    input {
+      width: 30rem;
+      height: 4rem;
+      line-height: 4rem;
+      font-size: 1.5rem;
+      color: $gray-lighter;
+      border-radius: 2rem;
+      background-color: $gray-darkest;
+      border: solid 1px $gray-darkest;
+      padding: 0 2rem;
+
+      @include box-shadow-lighter();
+
+      &:hover {
+        @include box-shadow-light();
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    select {
+      width: 20rem;
+      height: 4rem;
+      line-height: 4rem;
+      font-size: 1.5rem;
+      color: $gray-lighter;
+      border-radius: 2rem;
+      background-color: $gray-darkest;
+      border: solid 1px $gray-darkest;
+      padding: 0 2rem;
+      appearance: none;
+      background-image: url("../../assets/light/core/angle-line-down.svg");
+      background-repeat: no-repeat;
+      background-size: 2rem;
+      background-position-y: 1rem;
+      background-position-x: calc(100% - 1.5rem);
+
+      @include box-shadow-lighter();
+
+      &:hover {
+        @include box-shadow-light();
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      option {
+        height: 4rem;
+        line-height: 4rem;
+        font-size: 1.5rem;
+        color: $gray-lighter;
+      }
+    }
+  }
+}
+
+.arrow {
+  min-width: 1.25rem;
+  height: 1.25rem;
+}
+
+table {
+  width: 100%;
+  border-radius: 2rem;
+  background-color: $gray-dark;
+  border-collapse: collapse;
+}
+
+thead {
+  td {
+    font-weight: 600;
+    color: $gray-lighter;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue-dirty;
+    }
+
+    &:first-of-type {
+      padding-left: 2rem;
+    }
+
+    &:last-of-type {
+      padding-right: 2rem;
+    }
+  }
+}
+
+tbody {
+  width: 100%;
+  border-radius: 2rem;
+  background-color: $gray-darkest;
+
+  tr:hover {
+    td {
+      background-color: $blue-dirty;
+    }
+
+    td:first-of-type {
+      border-top-left-radius: 2rem;
+      border-bottom-left-radius: 2rem;
+    }
+
+    td:last-of-type {
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+  }
+
+  td {
+    &:first-of-type {
+      padding-left: 2rem;
+    }
+
+    &:last-of-type {
+      padding-right: 2rem;
+    }
+  }
+
+  tr:first-of-type {
+    td:first-of-type {
+      border-top-left-radius: 2rem;
+    }
+
+    td:last-of-type {
+      border-top-right-radius: 2rem;
+    }
+  }
+
+  tr:last-of-type {
+    td:first-of-type {
+      border-bottom-left-radius: 2rem;
+    }
+
+    td:last-of-type {
+      border-bottom-right-radius: 2rem;
+    }
+  }
+}
+
+td {
+  color: $gray-lightest;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  line-height: 4rem;
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.pagination {
+  background-color: $blue;
+  line-height: 4rem;
+  border-radius: 2rem;
+  transform: translateY(-4rem);
+  padding: 0 2rem;
+  color: $gray-lighter;
+  font-size: 1rem;
+  height: 4rem;
+}
+
+.pagination-description {
+  color: $gray-lighter;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+
+.pagination-separator {
+  height: 3rem;
+  width: 1px;
+  border: none;
+  background-color: $gray;
+  margin: 0 1rem;
+}
+
+.prev-page {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 3rem;
+  border-radius: 50%;
+  transition: background-color 0.25s ease 0s;
+
+  &:hover {
+    background-color: $blue-dirty;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.page {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $gray-lighter;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  border-radius: 50%;
+  transition: background-color 0.25s ease 0s;
+
+  &:hover,
+  &.active {
+    background-color: $blue-dirty;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.next-page {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  line-height: 3rem;
+  border-radius: 50%;
+  transition: background-color 0.25s ease 0s;
+
+  &:hover {
+    background-color: $blue-dirty;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
