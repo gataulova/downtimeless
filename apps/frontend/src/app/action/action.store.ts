@@ -11,22 +11,15 @@ export function createInitialState(): ActionState {
       {
         name: "Reboot",
         description: "Server Reboot",
-        server: "127.0.0.1",
-        createdAt: "2 days ago",
+        server: "142.93.239.222",
+        createdAt: "a moment ago",
         byAccount: "ev_gataulova@outlook.com"
       },
       {
-        name: "Reboot",
-        description: "Server Reboot",
-        server: "127.0.0.1",
-        createdAt: "2 days ago",
-        byAccount: "ev_gataulova@outlook.com"
-      },
-      {
-        name: "Reboot",
-        description: "Server Reboot",
-        server: "127.0.0.1",
-        createdAt: "2 days ago",
+        name: "Execute",
+        description: "mkdir test",
+        server: "142.93.239.222",
+        createdAt: "a moment ago",
         byAccount: "ev_gataulova@outlook.com"
       }
     ]

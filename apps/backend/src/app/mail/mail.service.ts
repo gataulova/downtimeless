@@ -14,7 +14,7 @@ export class MailService {
   });
 
   constructor() {
-    // this.sendConfirmationMail('akhmetovdev@gmail.com');
+    // this.sendConfirmationMail('ev.gataulova@gmail.com');
   }
 
   async sendConfirmationMail(email: string): Promise<void> {
@@ -24,7 +24,7 @@ export class MailService {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Allnodes.com - Email confirmation</title>
+    <title>DOWNTIMELESS - Server Reboot</title>
 </head>
 
 <body style="margin: 0; padding: 0;">
@@ -35,7 +35,7 @@ export class MailService {
                     <tr>
                         <td align="center" valign="center" style="height: 70px;">
                             <a href="https://observer.ru" target="_blank">
-                                OBSERVER
+                                DOWNTIMELESS
                             </a>
                         </td>
                     </tr>
@@ -66,29 +66,19 @@ export class MailService {
                     <tr>
                         <td align="center" valign="top">
                             <b style="color: #354052; font-size: 24px; font-family: Arial, sans-serif; line-height: 27px; -webkit-text-size-adjust: none; display: block;">
-                                Please Confirm your Email
+                                Your server has been rebooted
                             </b>
                         </td>
                     </tr>
                     <tr>
                         <td align="center" valign="top" style="padding-top: 20px; padding-bottom: 30px;">
                             <span style="margin-bottom: 5px; color: #7f8fa4; font-size: 14px; font-family: Arial, sans-serif; line-height: 16px; -webkit-text-size-adjust: none; display: block;">
-                                Thank you for your interest in OBSERVER.
+                                Thank you for your interest in DOWNTIMELSS.
                             </span>
                             <span style="margin-bottom: 5px; color: #7f8fa4; font-size: 14px; font-family: Arial, sans-serif; line-height: 16px; -webkit-text-size-adjust: none; display: block;">
-                                You have 24 hours to confirm this email address.
+                                You just rebooted server with ip 142.93.239.222
                             </span>
-                            <span style="color: #7f8fa4; font-size: 14px; font-family: Arial, sans-serif; line-height: 16px; -webkit-text-size-adjust: none; display: block;">
-                                Please click the button below to confirm:
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" valign="top" style="padding-bottom: 50px;">
-                            <a href="${""}" style="text-decoration: none !important; background-color: #22caba; color: #ffffff; width: 180px; height: 45px; border-radius: 40px; font-size: 14px; font-family: Arial, sans-serif; font-weight: bold; line-height: 45px; -webkit-text-size-adjust:none; display: block; letter-spacing: 2px;"
-                                target="_blank">
-                                CONFIRM
-                            </a>
+                            
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +91,7 @@ export class MailService {
                             <span style="color: #7f8fa4; font-size: 14px; font-family: Arial, sans-serif; line-height: 16px; -webkit-text-size-adjust: none; display: block;">
                                 For any issues, contact our customer service at:
                                 <a href="mailto:support@observer.ru target="_blank" style="color: #567fe9; text-decoration: none !important;">
-                                    support@observer.ru
+                                    support@downtimtless.ru
                                 </a>
                             </span>
                         </td>
@@ -152,7 +142,7 @@ export class MailService {
                 <table bgcolor="#eaedef" border="0" cellpadding="0" cellspacing="0" style="margin: 0; padding: 0; max-width: 600px;" width="100%">
                     <td align="left" valign="center" style="height: 75px;">
                         <span style="color: #7f8fa4; font-size: 12px; font-family: Arial, sans-serif; line-height: 14px; -webkit-text-size-adjust: none; display: block;">
-                            &copy; 2019 OBSERVER
+                            &copy; 2019 DOWNTIMELSS
                         </span>
                     </td>
                     <td align="right" valign="center" style="height: 75px;">
@@ -189,9 +179,9 @@ export class MailService {
 
   async sendMailWithContent(email: string, content: string): Promise<void> {
     const options: any = {
-      from: `"OBSERVER" <noreply@observer.ru>`,
+      from: `"DOWNTIMLESS" <noreply@downtimeless.ru>`,
       to: email,
-      subject: "OBSERVER - Email Confirmation",
+      subject: "DOWNTIMELESS - Server Reboot",
       html: content
     };
 

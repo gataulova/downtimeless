@@ -10,7 +10,11 @@
       />
 
       <div class="row">
-        <ui-button bColor="secondary" bClass="big" style="margin-right: 1rem"
+        <ui-button
+          bColor="secondary"
+          bClass="big"
+          style="margin-right: 1rem"
+          *ngIf="isShowingButton"
           >CREATE INSTANCE</ui-button
         >
         <select

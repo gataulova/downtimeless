@@ -1,47 +1,74 @@
 <div class="server-detail row justify-between align-top">
-  <ui-card style="flex-basis: 30%; width: 30%; height: max-content;">
-    <div class="title-wrapper row justify-between align-center">
-      <span class="title main" style="margin: 0;">{{ id }}</span>
-      <div class="row align-center justify-center">
-        <div class="button-wrapper" style="margin-right: 1rem;">
-          <ui-icon section="essential" shape="refresh-line"></ui-icon>
-        </div>
-        <div class="button-wrapper">
-          <ui-icon section="media" shape="power-line"></ui-icon>
+  <div
+    class="column justify-start align-center"
+    style="flex-basis: 30%; width: 30%; height: max-content;"
+  >
+    <ui-card style="width: 100%; height: max-content;">
+      <div class="title-wrapper row justify-between align-center">
+        <span class="title main" style="margin: 0;">{{ id }}</span>
+        <div class="row align-center justify-center">
+          <div class="button-wrapper" style="margin-right: 1rem;">
+            <ui-icon
+              section="essential"
+              shape="refresh-line"
+              (click)="onRefresh()"
+            ></ui-icon>
+          </div>
+          <div class="button-wrapper">
+            <ui-icon
+              section="media"
+              shape="power-line"
+              (click)="onPower()"
+            ></ui-icon>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row justify-between align-center">
-      <span class="title">IPv4</span>
-      <span class="value">140.191.49.156</span>
-    </div>
+      <div class="row justify-between align-center">
+        <span class="title">IPv4</span>
+        <span class="value">142.93.239.222</span>
+      </div>
 
-    <div class="row justify-between align-center">
-      <span class="title">Location</span>
-      <span class="value">Europe</span>
-    </div>
+      <div class="row justify-between align-center">
+        <span class="title">Location</span>
+        <span class="value">Europe</span>
+      </div>
 
-    <div class="row justify-between align-center">
-      <span class="title">Agent</span>
-      <span class="value"><ui-status [value]="true"></ui-status></span>
-    </div>
+      <div class="row justify-between align-center">
+        <span class="title">Agent</span>
+        <span class="value"><ui-status [value]="true"></ui-status></span>
+      </div>
 
-    <div class="row justify-between align-center">
-      <span class="title">Server</span>
-      <span class="value"><ui-status [value]="true"></ui-status></span>
-    </div>
+      <div class="row justify-between align-center">
+        <span class="title">Server</span>
+        <span class="value"><ui-status [value]="true"></ui-status></span>
+      </div>
 
-    <div class="row justify-between align-center">
-      <span class="title">Uptime</span>
-      <span class="value">84 days</span>
-    </div>
+      <div class="row justify-between align-center">
+        <span class="title">Uptime</span>
+        <span class="value">65 days</span>
+      </div>
 
-    <div class="row justify-between align-center">
-      <span class="title">Created</span>
-      <span class="value">77 days ago</span>
+      <div class="row justify-between align-center">
+        <span class="title">Created</span>
+        <span class="value">66 days ago</span>
+      </div>
+    </ui-card>
+
+    <textarea
+      placeholder="Enter a command..."
+      [rows]="5"
+      class="textarea"
+    ></textarea>
+
+    <div
+      class="row justify-end align-center"
+      style="width: 100%; margin-top: 1rem"
+    >
+      <ui-button (click)="onExecute()">Execute</ui-button>
     </div>
-  </ui-card>
+  </div>
+
   <div
     class="charts column justify-start align-center"
     style="flex-basic:calc(70% - 2rem); width: calc(70% - 2rem);"
@@ -51,8 +78,8 @@
 
       <canvas
         baseChart
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
+        [datasets]="lineChartDataCpu"
+        [labels]="lineChartLabelsCpu"
         [options]="lineChartOptions"
         [colors]="lineChartColors"
         [legend]="lineChartLegend"
@@ -65,8 +92,8 @@
 
       <canvas
         baseChart
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
+        [datasets]="lineChartDataMemory"
+        [labels]="lineChartLabelsMemory"
         [options]="lineChartOptions"
         [colors]="lineChartColors"
         [legend]="lineChartLegend"
@@ -79,8 +106,8 @@
 
       <canvas
         baseChart
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
+        [datasets]="lineChartDataSwap"
+        [labels]="lineChartLabelsSwap"
         [options]="lineChartOptions"
         [colors]="lineChartColors"
         [legend]="lineChartLegend"
@@ -93,8 +120,8 @@
 
       <canvas
         baseChart
-        [datasets]="lineChartData"
-        [labels]="lineChartLabels"
+        [datasets]="lineChartDataDisk"
+        [labels]="lineChartLabelsDisk"
         [options]="lineChartOptions"
         [colors]="lineChartColors"
         [legend]="lineChartLegend"

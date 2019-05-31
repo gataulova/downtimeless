@@ -14,18 +14,63 @@ export class ServerDetailComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
 
-  data = [85, 69, 75, 77, 88, 84, 85, 90, 97, 92, 96, 95, 99];
+  dataCpu = [85, 59, 75, 37, 38, 24, 35, 60, 47, 52, 46, 45, 40];
 
-  public lineChartData: ChartDataSets[] = [
+  public lineChartDataCpu: ChartDataSets[] = [
     {
-      data: this.data,
+      data: this.dataCpu,
       borderWidth: 1,
       pointRadius: 0,
       fill: "start"
     }
   ];
 
-  public lineChartLabels: Label[] = this.data.map(value => String(value));
+  public lineChartLabelsCpu: Label[] = this.dataCpu.map(value => String(value));
+
+  dataMemory = [55, 69, 65, 57, 58, 44, 55, 70, 67, 62, 66, 55, 52];
+
+  public lineChartDataMemory: ChartDataSets[] = [
+    {
+      data: this.dataMemory,
+      borderWidth: 1,
+      pointRadius: 0,
+      fill: "start"
+    }
+  ];
+
+  public lineChartLabelsMemory: Label[] = this.dataMemory.map(value =>
+    String(value)
+  );
+
+  dataSwap = [15, 14, 15, 20, 17, 14, 15, 10, 15, 17, 18, 15, 15];
+
+  public lineChartDataSwap: ChartDataSets[] = [
+    {
+      data: this.dataSwap,
+      borderWidth: 1,
+      pointRadius: 0,
+      fill: "start"
+    }
+  ];
+
+  public lineChartLabelsSwap: Label[] = this.dataSwap.map(value =>
+    String(value)
+  );
+
+  dataDisk = [28, 35, 40, 47, 35, 37, 38, 40, 37, 35, 30, 37, 31];
+
+  public lineChartDataDisk: ChartDataSets[] = [
+    {
+      data: this.dataDisk,
+      borderWidth: 1,
+      pointRadius: 0,
+      fill: "start"
+    }
+  ];
+
+  public lineChartLabelsDisk: Label[] = this.dataDisk.map(value =>
+    String(value)
+  );
 
   public lineChartOptions: ChartOptions = {
     responsive: true,
@@ -55,9 +100,9 @@ export class ServerDetailComponent implements OnInit, OnDestroy {
           position: "right",
           ticks: {
             beginAtZero: false,
-            min: 50,
+            min: 0,
             max: 100,
-            suggestedMin: 60,
+            suggestedMin: 0,
             suggestedMax: 100
           }
         }
@@ -88,5 +133,17 @@ export class ServerDetailComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  onRefresh() {
+    alert("Server rebooted successfully");
+  }
+
+  onPower() {
+    alert("Server powered off successfully");
+  }
+
+  onExecute() {
+    alert("Command executed successfully");
   }
 }

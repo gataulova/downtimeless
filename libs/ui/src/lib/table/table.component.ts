@@ -37,6 +37,7 @@ export class TableComponent implements OnInit {
   @Input() sort: Sort = null;
   @Input() pagination: Pagination = { currentPage: 1, rowsPerPage: 10 };
   @Input() length: number = 1;
+  @Input() isShowingButton: boolean = true;
 
   @Output() filterChanged: EventEmitter<string> = new EventEmitter();
   @Output() sortChanged: EventEmitter<Sort> = new EventEmitter();

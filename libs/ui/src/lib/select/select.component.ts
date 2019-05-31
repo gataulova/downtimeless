@@ -6,13 +6,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./select.component.scss"]
 })
 export class SelectComponent implements OnInit {
-  name = "name";
-  value = "value";
+  name = "";
+  value = "";
   options = [];
 
   constructor() {}
 
   ngOnInit() {}
 
-  onSelect(option) {}
+  onSelect(option: any) {}
 }

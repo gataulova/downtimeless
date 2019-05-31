@@ -7,20 +7,36 @@ export interface ServerState {
 }
 
 export function createInitialState(): ServerState {
+  const randoms = Array.from({ length: 9 }).map(() => ({
+    name: getRandomName(),
+    ip: getRandomIp(),
+    location: getRandomLocation(),
+    agentStatus: getRandomBoolean(),
+    serverStatus: true,
+    cpuLoad: getRandomPercent(),
+    memoryLoad: getRandomPercent(),
+    swapLoad: getRandomPercent(),
+    diskUsage: getRandomPercent(),
+    uptime: getRandomUptime(),
+    createdAt: getRandomRelativeDate()
+  }));
+
+  const real = {
+    name: "FGN4NJye7G",
+    ip: "142.93.239.222",
+    location: "Europe",
+    agentStatus: true,
+    serverStatus: true,
+    cpuLoad: "40%",
+    memoryLoad: "52%",
+    swapLoad: "15%",
+    diskUsage: "31%",
+    uptime: "65 days",
+    createdAt: "66 days ago"
+  };
+
   return {
-    servers: Array.from({ length: 10 }).map(() => ({
-      name: getRandomName(),
-      ip: getRandomIp(),
-      location: getRandomLocation(),
-      agentStatus: getRandomBoolean(),
-      serverStatus: true,
-      cpuLoad: getRandomPercent(),
-      memoryLoad: getRandomPercent(),
-      swapLoad: getRandomPercent(),
-      diskUsage: getRandomPercent(),
-      uptime: getRandomUptime(),
-      createdAt: getRandomRelativeDate()
-    }))
+    servers: [real, ...randoms]
   };
 }
 
