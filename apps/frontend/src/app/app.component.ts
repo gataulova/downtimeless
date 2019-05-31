@@ -39,4 +39,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onAuth() {
+    alert("Invalid email or password");
+  }
 }
