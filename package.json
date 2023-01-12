@@ -73,7 +73,7 @@
     "bull": "^3.7.0",
     "chart.js": "^2.8.0",
     "class-transformer": "^0.2.0",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "core-js": "^2.5.4",
     "csurf": "^1.10.0",
     "diskusage": "^1.1.1",
